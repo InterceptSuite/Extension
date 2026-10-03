@@ -12,6 +12,9 @@ Extensions let you decode, display, and re-encode protocol-specific traffic inte
 |-----------|----------|---------|-------------|
 | [postgresql](postgresql/) | PostgreSQL | 5432 | Decodes and re-encodes PostgreSQL wire protocol v3 messages |
 | [mqtt](mqtt/) | MQTT | 1883, 8883 | Decodes and re-encodes MQTT 3.1.1 control packets |
+| [mssql](mssql/) | Microsoft SQL Server (TDS) | 1433 | Decodes and re-encodes TDS PRELOGIN, LOGIN7 (incl. credentials), SQLBatch, RPC, and query result tokens |
+| [dns](dns/) | DNS | 53 | Decodes and re-encodes DNS queries/responses (UDP and TCP-framed) |
+| [http3](http3/) | HTTP/3 (QUIC) | 443 | Decodes HTTP/3 request and response streams to plain HTTP text (method, URL, headers via QPACK, body decompressed: gzip, deflate; br and zstd when the `brotli` / `zstandard` Python modules are installed) and re-encodes edits (QPACK headers, frame lengths, recompressed body, updated content-length) |
 
 
 ## Documentation
