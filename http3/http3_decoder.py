@@ -901,6 +901,9 @@ class _HTTP3Handler:
             return b''
 
     def should_show_tab(self, data):
+        alpn = data.get('alpn') if hasattr(data, 'get') else None
+        if alpn is not None and not str(alpn).lower().startswith('h3'):
+            return False
         try:
             return _decode(self._raw(data)) is not None
         except Exception:
